@@ -12,8 +12,7 @@ Documentation for the python package can be found at http://pysimm.org/documenta
 2. [Integration with LAMMPS](#integration-with-lammps) 
 3. [Integration with Cassandra](#integration-with-cassandra)
 4. [Complete Installation](#complete-installation-pysimm-and-lammps)
-5. [Using Docker image](#using-docker-image)
-6. [Acknowledgments](#acknowledgments)
+
 
 
 Getting Started
@@ -24,7 +23,7 @@ Those who need to install LAMMPS (or wish to build a new version of LAMMPS with 
 To get started, clone the repository, cd into the new directory, and install using complete_install.py. The --pysimm command line argument passed to the script should be the directory in which you cloned the pysimm repository (one directory up). The following example assumes you cloned the repository in your home directory.
 
 ```
-git clone https://github.com/polysimtools/pysimm
+git clone [https://github.com/polysimtools/pysimm](https://github.com/supriyonaskar/Pysimm_by_SN.git)
 python pysimm/complete_install.py --pysimm $PWD
 ```
 
@@ -82,7 +81,7 @@ Complete Installation (pysimm and LAMMPS)
 Included in the repository is a python script complete_install.py that will configure pysimm, install LAMMPS from their git repository, and configure the integration between the two pieces of software. First clone the pysimm repository, and run complete_install.py. You must provide the path prefix to the recently cloned pysimm directory and the prefix for the new lammps source code directory. The following assumes pysimm was cloned into your home directory and will also install lammps in your home directory:
 
 ```
-git clone https://github.com/polysimtools/pysimm
+git clone [https://github.com/polysimtools/pysimm](https://github.com/supriyonaskar/Pysimm_by_SN.git)
 python pysimm/complete_install.py --pysimm $PWD --lammps $PWD
 ```
 
@@ -91,55 +90,4 @@ Afterwords be sure to source your ~/.bashrc file:
 ```source ~/.bashrc```
 
 
-Using Docker image
-==================
 
-The root folder now contains a 'Dockerfile' that will help you to create a Docker 
-image of Debian 10 with pysimm and pre-installed LAMMPS, 
-CASSANDRA, Zeo++ v0.3, and PoreBlazer v4.0.  
-
-To compile the Docker image from the file run the following from the root pysimm directory 
-(optionally changing 'my_tag' to any text tag you like):
-
-```commandline
- docker build -t pysimm:my_tag -f Dockerfile .
-```
-
-Please refer the [Docker documentation](https://docs.docker.com/engine/reference/commandline/build/) 
-for the detailed description of the `build` function.  
-
-If the build is successful the list of your Docker images will contain freshly built 
-pysimm image. The full list can be shown by:
-```commandline
- docker images
-```
-
-Finally, to run the corresponding pysimm image call:  
-```commandline
- docker run -it pysimm:my_tag bash
-```
-Please see [Docker reference page](https://docs.docker.com/engine/reference/run/) for the 
-detailed description of `docker run` command.
-
-The pysimm source files are kept in `/usr/local/pysimm` folder. Thus you can quickly test the 
-LAMMPS or CASSANDRA modules by running one of the examples.
-  
-```commandline
- cd /usr/local/pysimm/Examples/08_ethanol_acetone_mixture
- python run.py
-```
-
-To transfer output files from the docker image back to host one can use `docker cp` command. 
-```commandline
- docker cp ContainerName:/container/path/to/file /host/path/to/file
-```
-
-and the `ContainerName` one can use either the name or ID of a running container 
-which can be listed by calling `docker ps`.
- 
-
-Acknowledgments
-================
-This material is based upon work supported by: 
- * National Science Foundation under Grant No. (ACI-1613155)
- * U.S. Departement of Energy under Grant No. (DE-FG02-17ER16362) 
