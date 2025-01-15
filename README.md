@@ -23,7 +23,7 @@ Those who need to install LAMMPS (or wish to build a new version of LAMMPS with 
 To get started, clone the repository, cd into the new directory, and install using complete_install.py. The --pysimm command line argument passed to the script should be the directory in which you cloned the pysimm repository (one directory up). The following example assumes you cloned the repository in your home directory.
 
 ```
-git clone [https://github.com/polysimtools/pysimm](https://github.com/supriyonaskar/Pysimm_by_SN.git)
+git clone https://github.com/supriyonaskar/Pysimm_by_SN.git
 python pysimm/complete_install.py --pysimm $PWD
 ```
 
@@ -81,7 +81,7 @@ Complete Installation (pysimm and LAMMPS)
 Included in the repository is a python script complete_install.py that will configure pysimm, install LAMMPS from their git repository, and configure the integration between the two pieces of software. First clone the pysimm repository, and run complete_install.py. You must provide the path prefix to the recently cloned pysimm directory and the prefix for the new lammps source code directory. The following assumes pysimm was cloned into your home directory and will also install lammps in your home directory:
 
 ```
-git clone [https://github.com/polysimtools/pysimm](https://github.com/supriyonaskar/Pysimm_by_SN.git)
+git clone https://github.com/supriyonaskar/Pysimm_by_SN.git
 python pysimm/complete_install.py --pysimm $PWD --lammps $PWD
 ```
 
